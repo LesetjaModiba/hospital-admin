@@ -73,8 +73,13 @@ const AddPatient = () =>{
                     <input type='text' className="textInput" onChange={(e)=>setFullName(e.target.value)} placeholder="Full Names"/><br></br>
                     <input type='text' className="textInput" onChange={(e)=>setPhoneNumber(e.target.value)} placeholder="Phone Number"/><br></br>
                     <input type='text' className="textInput" onChange={(e)=>setPhysicalAddress(e.target.value)} placeholder="Physical Address"/><br></br>
-                   
-                    <input type='text' className="textInput" onChange={(e)=>setCondition(e.target.value)} placeholder="Condition"/><br></br>
+                    <p>Condition: </p>
+                    <select style={{width:"80%",height:35,background: "rgba(255, 255, 255, 0.2)",border:"none",borderRadius:5}} placeholder="Condition" onChange={(e)=>setCondition(e.target.value)}>
+                    <option value="High">Mild</option>
+                    <option value="Medium">Moderate</option>
+                    <option value="Low">Severe</option>
+                </select>
+                    {/* <input type='text' className="textInput" onChange={(e)=>setCondition(e.target.value)} placeholder="Condition"/><br></br> */}
                     <input type='text' className="textInput" onChange={(e)=>setNotes(e.target.value)} placeholder="Notes"/><br></br>
                     {/* <input type='text' className="textInput" onChange={(e)=>setNextOfKin(e.target.value)} placeholder="Next Of Kin"/><br></br> */}
                      <button className="button" onClick={(e)=>{AddPatient()}}>Create File</button>
