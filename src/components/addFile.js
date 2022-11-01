@@ -16,12 +16,11 @@ function AddFile(){
     // const history = useHistory()
 
     const addPatientRef = collection(db,'patients')
+    const recordCollectionRef=collection(db,'records')
     const [patients,setPatients] = useState([])
     let today = new Date();
     const [notes,setNotes]=useState("");
-    const [condition,setCondition]=useState("");
-    const collectionRef = collection(db,'patients');
-    
+    const [condition,setCondition]=useState("");   
 
 const AddPatient = () =>{
 
@@ -37,6 +36,7 @@ const AddPatient = () =>{
     };
 
     addDoc(addPatientRef,Patient).then(()=>{
+        addDoc(recordCollectionRef,Patient)
         console.log('patient added');
         alert("successfully added", {type:'successful'});
         // history.push('/admin')
